@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Methodology and Sources: How the Seller Fee Calculator Works</title>
-<meta name="description" content="Every fee rate and formula used in the seller fee calculator, with links to eBay, Etsy, PayPal and TrueGether's own fee pages and the date each was checked.">
+<meta name="description" content="Every fee rate and formula used in the seller fee calculator, with links to eBay, Etsy and TrueGether's own fee pages and the date each was checked.">
 <link rel="canonical" href="https://salonijain-svg.github.io/marketplace-fee-calculator/methodology.html">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -33,9 +33,7 @@
         <tr><td>Etsy</td><td>Transaction fee</td><td>6.5%</td><td>Item price plus shipping and gift wrap (not US sales tax)</td></tr>
         <tr><td>Etsy</td><td>Payment processing (US bank account)</td><td>3% + $0.25</td><td>Gross order, including shipping and tax</td></tr>
         <tr><td>TrueGether</td><td>Listing, final value, monthly fees and commission</td><td>None</td><td>n/a</td></tr>
-        <tr><td>TrueGether</td><td>Payment processing</td><td>Charged by the payment provider. Sales are paid out through PayPal or Amazon Payments; the calculator uses PayPal's published US rates below.</td><td>Gross payment</td></tr>
-        <tr><td>PayPal</td><td>PayPal Checkout</td><td>3.49% + $0.49</td><td>Payment amount</td></tr>
-        <tr><td>PayPal</td><td>Goods and services payments</td><td>2.99%</td><td>Payment amount</td></tr>
+        <tr><td>TrueGether</td><td>Payment processing</td><td>Charged by the payment provider, not TrueGether. Usually around 2.9% + $0.30 (the calculator's default), but the rate can change, so it's editable in the calculator.</td><td>Gross payment</td></tr>
       </tbody>
     </table>
     </div>
@@ -51,7 +49,7 @@
     <code>processing = 3% × (price + shipping + tax) + 0.25</code></p>
     <h3>TrueGether</h3>
     <p><code>marketplace fees = 0</code><br>
-    <code>processing = PayPal rate × (price + shipping + tax) + PayPal fixed fee</code></p>
+    <code>processing = your rate × (price + shipping + tax) + your fixed fee</code> (default 2.9% + $0.30)</p>
     <h3>What you keep</h3>
     <p><code>you keep = price + shipping − total fees</code>. Sales tax is passed on to the state, so it's not counted as your income, but it's included where a platform charges fees on it.</p>
 
@@ -60,7 +58,6 @@
       <li><a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees?id=4822">eBay Help: Selling fees</a></li>
       <li><a href="https://www.etsy.com/legal/fees/">Etsy: Fees &amp; Payments Policy</a> (last updated Oct 5, 2026)</li>
       <li><a href="https://www.etsy.com/legal/etsy-payments/">Etsy Payments Policy</a> (last updated Jul 31, 2026)</li>
-      <li><a href="https://www.paypal.com/us/business/paypal-business-fees">PayPal: Business fees (US)</a> (last updated Oct 1, 2026)</li>
       <li><a href="https://www.truegether.com/sell.html">TrueGether: Selling on TrueGether</a></li>
     </ul>
     <p>Spotted an out-of-date rate? Fees change, and corrections are welcome through the project's GitHub repository.</p>

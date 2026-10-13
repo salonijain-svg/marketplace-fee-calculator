@@ -15,9 +15,9 @@ const RATES = {
     procRate: 0.03,        // US bank account, on gross incl. shipping + tax
     procFixed: 0.25
   },
-  paypal: {
-    checkout: { rate: 0.0349, fixed: 0.49 },
-    gs:       { rate: 0.0299, fixed: 0 }
+  truegether: {
+    procRate: 0.029,       // default only: payment provider's rate, approx. and subject to change
+    procFixed: 0.30        // editable by the user in the form
   }
 };
 
@@ -43,9 +43,8 @@ function etsyFees(price, shipping, tax) {
   return { listing, txn, proc, total: listing + txn + proc };
 }
 
-function trueGetherFees(price, shipping, tax, method) {
-  const p = RATES.paypal[method];
-  const proc = (price + shipping + tax) * p.rate + p.fixed;
+function trueGetherFees(price, shipping, tax, rate, fixed) {
+  const proc = (price + shipping + tax) * rate + fixed;
   return { mkt: 0, proc, total: proc };
 }
 
@@ -65,12 +64,13 @@ function update() {
   const price = num($("price"));
   const shipping = num($("shipping"));
   const tax = num($("tax"));
-  const method = $("paypal").value;
+  const rate = num($("tgRate")) / 100;
+  const fixed = num($("tgFixed"));
   const revenue = price + shipping;                     // seller's revenue; tax is passed through
 
   fill("card-ebay", ebayFees(price, shipping, tax), revenue);
   fill("card-etsy", etsyFees(price, shipping, tax), revenue);
-  fill("card-tg", trueGetherFees(price, shipping, tax, method), revenue);
+  fill("card-tg", trueGetherFees(price, shipping, tax, rate, fixed), revenue);
 }
 
 $("price").addEventListener("input", (e) => {
@@ -78,5 +78,5 @@ $("price").addEventListener("input", (e) => {
   update();
 });
 $("priceRange").addEventListener("input", (e) => { $("price").value = e.target.value; update(); });
-["shipping", "tax", "paypal"].forEach((id) => $(id).addEventListener("input", update));
+["shipping", "tax", "tgRate", "tgFixed"].forEach((id) => $(id).addEventListener("input", update));
 update();
