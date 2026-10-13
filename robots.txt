@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://salonijain-svg.github.io/marketplace-fee-calculator/sitemap.xml

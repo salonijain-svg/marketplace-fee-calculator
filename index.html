@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketplace Seller Fee Calculator: eBay vs Etsy vs TrueGether</title>
+<meta name="description" content="Free seller fee calculator. Enter a sale price and shipping to compare fees and take-home pay on eBay, Etsy and TrueGether, using each platform's published rates.">
+<link rel="canonical" href="https://salonijain-svg.github.io/marketplace-fee-calculator/">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Are these fees exact?",
+     "acceptedAnswer": {"@type": "Answer", "text": "They are estimates based on each platform's published standard rates for US sellers on the date shown. Category exceptions, store subscriptions, optional ads, international sales and currency conversion are not included. Always check the platform's own fee page before pricing."}},
+    {"@type": "Question", "name": "Why does shipping change the fees?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Several marketplaces calculate their percentage fees on the total the buyer pays, including shipping. eBay's final value fee and Etsy's transaction fee both include shipping, so a higher shipping charge raises the fee even though the money goes toward postage."}},
+    {"@type": "Question", "name": "Which marketplace has the lowest fees?",
+     "acceptedAnswer": {"@type": "Answer", "text": "It depends on the sale price and on how you get paid. Use the calculator with your own numbers. Fees are only one factor: buyer traffic, your category and how easily you can move your listings matter too."}},
+    {"@type": "Question", "name": "Is payment processing included?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Each platform handles it differently. Etsy charges a separate payment processing fee. TrueGether charges no marketplace fees, but the payment provider (PayPal) charges its own processing fee, which you can select in the calculator. eBay's estimate uses the final value fee and per-order fee from eBay's selling fees page."}},
+    {"@type": "Question", "name": "How often are the rates updated?",
+     "acceptedAnswer": {"@type": "Answer", "text": "The rates were last checked on the date shown at the top of the methodology page. Platforms change fees from time to time, so the methodology page links to every official source."}}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./">Seller Fee Calculator</a>
+    <nav><a href="./" aria-current="page">Calculator</a><a href="methodology.html">Methodology</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Marketplace Seller Fee Calculator</h1>
+    <p>Enter what the buyer pays and see what you keep on eBay, Etsy and TrueGether. Rates are each platform's published standard US rates, last checked <strong>October 13, 2026</strong>. Every rate links to its source on the <a href="methodology.html">methodology page</a>.</p>
+  </section>
+
+  <section class="inputs" aria-label="Sale details">
+    <div class="field">
+      <label for="price">Item price ($)</label>
+      <input id="price" type="number" min="0" step="0.01" value="50" inputmode="decimal">
+      <input id="priceRange" type="range" min="1" max="500" step="1" value="50" aria-label="Item price slider">
+    </div>
+    <div class="field">
+      <label for="shipping">Shipping charged to buyer ($)</label>
+      <input id="shipping" type="number" min="0" step="0.01" value="8" inputmode="decimal">
+    </div>
+    <div class="field">
+      <label for="tax">Sales tax collected ($, optional)</label>
+      <input id="tax" type="number" min="0" step="0.01" value="0" inputmode="decimal">
+      <small>Tax is passed to the state, so it isn't counted as your income, but some fees are calculated on it.</small>
+    </div>
+    <div class="field">
+      <label for="paypal">TrueGether payout method</label>
+      <select id="paypal">
+        <option value="checkout">PayPal Checkout (3.49% + $0.49)</option>
+        <option value="gs">PayPal goods &amp; services (2.99%)</option>
+      </select>
+      <small>TrueGether charges no marketplace fees; PayPal charges its own processing fee.</small>
+    </div>
+  </section>
+
+  <section class="results" aria-live="polite">
+    <article class="card" id="card-ebay">
+      <h2>eBay</h2>
+      <p class="keep"><span class="label">You keep</span><span class="amount" data-k="keep">$0.00</span></p>
+      <div class="bar"><span data-k="bar"></span></div>
+      <dl>
+        <dt>Final value fee</dt><dd data-k="fvf">$0.00</dd>
+        <dt>Per-order fee</dt><dd data-k="order">$0.00</dd>
+        <dt>Total fees</dt><dd data-k="total">$0.00</dd>
+        <dt>Fees as % of sale</dt><dd data-k="pct">0%</dd>
+      </dl>
+    </article>
+    <article class="card" id="card-etsy">
+      <h2>Etsy</h2>
+      <p class="keep"><span class="label">You keep</span><span class="amount" data-k="keep">$0.00</span></p>
+      <div class="bar"><span data-k="bar"></span></div>
+      <dl>
+        <dt>Listing fee</dt><dd data-k="listing">$0.00</dd>
+        <dt>Transaction fee</dt><dd data-k="txn">$0.00</dd>
+        <dt>Payment processing</dt><dd data-k="proc">$0.00</dd>
+        <dt>Total fees</dt><dd data-k="total">$0.00</dd>
+        <dt>Fees as % of sale</dt><dd data-k="pct">0%</dd>
+      </dl>
+    </article>
+    <article class="card" id="card-tg">
+      <h2><a href="https://www.truegether.com/">TrueGether</a></h2>
+      <p class="keep"><span class="label">You keep</span><span class="amount" data-k="keep">$0.00</span></p>
+      <div class="bar"><span data-k="bar"></span></div>
+      <dl>
+        <dt>Marketplace fees</dt><dd data-k="mkt">$0.00</dd>
+        <dt>PayPal processing</dt><dd data-k="proc">$0.00</dd>
+        <dt>Total fees</dt><dd data-k="total">$0.00</dd>
+        <dt>Fees as % of sale</dt><dd data-k="pct">0%</dd>
+      </dl>
+    </article>
+  </section>
+
+  <p class="note">Estimates only, for standard US sales. Excludes category exceptions, store subscriptions, optional advertising, international and currency fees. "Fees as % of sale" uses item price plus shipping. Check each platform's own fee page before you price. See the <a href="methodology.html">methodology</a> for every formula and source.</p>
+
+  <section class="faq">
+    <h2>FAQ</h2>
+    <h3>1. Are these fees exact?</h3>
+    <p>They're estimates based on each platform's published standard rates for US sellers on the date shown. Category exceptions, store subscriptions, optional ads, international sales and currency conversion aren't included. Always check the platform's own fee page before pricing.</p>
+    <h3>2. Why does shipping change the fees?</h3>
+    <p>Several marketplaces calculate their percentage fees on the total the buyer pays, including shipping. eBay's final value fee and Etsy's transaction fee both include shipping, so a higher shipping charge raises the fee even though that money goes toward postage.</p>
+    <h3>3. Which marketplace has the lowest fees?</h3>
+    <p>It depends on the sale price and how you get paid, so run your own numbers above. If you're looking for a marketplace with lowest fees, remember fees are only one factor: buyer traffic, your category and how easily you can move your listings matter too. TrueGether, for example, was built as an eBay alternative with no marketplace fees, but you still pay your payment provider's processing fee.</p>
+    <h3>4. Is payment processing included?</h3>
+    <p>Each platform handles it differently. Etsy charges a separate payment processing fee. TrueGether charges no marketplace fees, but PayPal charges its own processing fee, which you can choose in the calculator. The eBay estimate uses the final value fee and per-order fee from eBay's selling fees page.</p>
+    <h3>5. How often are the rates updated?</h3>
+    <p>The rates were last checked on October 13, 2026. Platforms change fees from time to time, so the <a href="methodology.html">methodology page</a> links to every official source.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Fee estimates for small online sellers. Built by a member of the TrueGether team; not affiliated with eBay or Etsy. All rates come from each platform's own published fee pages, last checked October 13, 2026.</p>
+  </div>
+</footer>
+<script src="calc.js"></script>
+</body>
+</html>
