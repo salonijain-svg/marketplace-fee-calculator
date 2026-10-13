@@ -51,9 +51,6 @@ h1 { font-size: 2rem; line-height: 1.2; margin: 32px 0 8px; }
   background: var(--bg); color: var(--text);
 }
 .field input[type=range] { accent-color: var(--accent); }
-.pair { display: flex; align-items: center; gap: 8px; }
-.pair input { flex: 1 1 0; min-width: 0; width: 100%; }
-.pair span { color: var(--muted); white-space: nowrap; }
 .field small { color: var(--muted); font-size: .8rem; }
 
 .results { display: flex; flex-wrap: wrap; gap: 16px; }
@@ -74,6 +71,7 @@ dt, dd { margin: 0; padding: 4px 0; border-top: 1px solid var(--border); }
 dt { flex: 0 0 60%; color: var(--muted); font-size: .9rem; }
 dd { flex: 0 0 40%; text-align: right; font-variant-numeric: tabular-nums; }
 
+.card-note { color: var(--muted); font-size: .8rem; margin: 12px 0 0; }
 .note { color: var(--muted); font-size: .85rem; margin: 18px 0 32px; }
 
 .faq, .method { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 8px 24px 20px; margin-bottom: 32px; }

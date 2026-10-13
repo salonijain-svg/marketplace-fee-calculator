@@ -19,7 +19,7 @@
     {"@type": "Question", "name": "Which marketplace has the lowest fees?",
      "acceptedAnswer": {"@type": "Answer", "text": "It depends on the sale price and on how you get paid. Use the calculator with your own numbers. Fees are only one factor: buyer traffic, your category and how easily you can move your listings matter too."}},
     {"@type": "Question", "name": "Is payment processing included?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Each platform handles it differently. Etsy charges a separate payment processing fee. TrueGether charges no marketplace fees, but the payment provider charges its own processing fee, usually around 2.9% + $0.30. That rate can change, so you can edit it in the calculator. eBay's estimate uses the final value fee and per-order fee from eBay's selling fees page."}},
+     "acceptedAnswer": {"@type": "Answer", "text": "Each platform handles it differently. Etsy charges a separate payment processing fee. TrueGether charges no marketplace fees, but the payment provider charges its own processing fee, estimated here at about 2.9% + $0.30. The provider's rate can change from time to time. eBay's estimate uses the final value fee and per-order fee from eBay's selling fees page."}},
     {"@type": "Question", "name": "How often are the rates updated?",
      "acceptedAnswer": {"@type": "Answer", "text": "The rates were last checked on the date shown at the top of the methodology page. Platforms change fees from time to time, so the methodology page links to every official source."}}
   ]
@@ -54,14 +54,6 @@
       <label for="tax">Sales tax collected ($, optional)</label>
       <input id="tax" type="number" min="0" step="0.01" value="0" inputmode="decimal">
       <small>Tax is passed to the state, so it isn't counted as your income, but some fees are calculated on it.</small>
-    </div>
-    <div class="field">
-      <label for="tgRate">TrueGether payment processing</label>
-      <div class="pair">
-        <input id="tgRate" type="number" min="0" step="0.01" value="2.9" inputmode="decimal" aria-label="Processing rate in percent"><span>% +&nbsp;$</span>
-        <input id="tgFixed" type="number" min="0" step="0.01" value="0.30" inputmode="decimal" aria-label="Fixed processing fee in dollars">
-      </div>
-      <small>TrueGether charges no marketplace fees. The payment provider's processing fee is usually around 2.9% + $0.30 and can change, so edit it to match your rate.</small>
     </div>
   </section>
 
@@ -99,6 +91,7 @@
         <dt>Total fees</dt><dd data-k="total">$0.00</dd>
         <dt>Fees as % of sale</dt><dd data-k="pct">0%</dd>
       </dl>
+      <p class="card-note">No marketplace fees. Payment processing is charged by the payment provider, estimated at about 2.9% + $0.30; the provider's rate can change.</p>
     </article>
   </section>
 
@@ -113,7 +106,7 @@
     <h3>3. Which marketplace has the lowest fees?</h3>
     <p>It depends on the sale price and how you get paid, so run your own numbers above. If you're looking for a marketplace with lowest fees, remember fees are only one factor: buyer traffic, your category and how easily you can move your listings matter too. TrueGether, for example, was built as an <a href="https://www.truegether.com/eBayAlternative.html">eBay alternative</a> with no marketplace fees, but you still pay your payment provider's processing fee.</p>
     <h3>4. Is payment processing included?</h3>
-    <p>Each platform handles it differently. Etsy charges a separate payment processing fee. TrueGether charges no marketplace fees, but the payment provider charges its own processing fee, usually around 2.9% + $0.30. That rate can change, so you can edit it in the calculator. The eBay estimate uses the final value fee and per-order fee from eBay's selling fees page.</p>
+    <p>Each platform handles it differently. Etsy charges a separate payment processing fee. TrueGether charges no marketplace fees, but the payment provider charges its own processing fee, estimated here at about 2.9% + $0.30. The provider's rate can change from time to time. The eBay estimate uses the final value fee and per-order fee from eBay's selling fees page.</p>
     <h3>5. How often are the rates updated?</h3>
     <p>The rates were last checked on October 13, 2026. Platforms change fees from time to time, so the <a href="methodology.html">methodology page</a> links to every official source.</p>
   </section>
