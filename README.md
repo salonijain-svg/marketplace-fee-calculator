@@ -8,8 +8,8 @@ A free, open-source calculator that shows what eBay takes from a sale and what y
 
 - Calculates eBay's final value fee by category (13.6% in most categories, plus category rates such as 15.3% for books and 6.7% for guitars)
 - Adds the per-order fee ($0.30 on orders of $10 or less, $0.40 above)
-- Includes buyer-paid shipping and optional sales tax, because eBay charges its fee on both
-- Optional Below Standard surcharge, postage cost and item cost for a profit figure
+- Calculates every fee on the item price, so you can see what you keep from the sale itself
+- Optional Below Standard surcharge (eBay adds 6% to the final value fee)
 - Compares the same sale on Etsy, Mercari and TrueGether
 
 ## How it's built
